@@ -22,6 +22,7 @@ export type TUpdateDonor = Partial<IDonor>;
 export interface TDonorQuery {
   bloodGroup?: string;
   location?: string;
+  search?: string;
   page?: string;
   limit?: string;
 }

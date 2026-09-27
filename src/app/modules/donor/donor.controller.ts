@@ -29,6 +29,13 @@ const getAllDonors: RequestHandler = async (req, res) => {
   } catch (error) { handleError(error, res); }
 };
 
+const getDonorStats: RequestHandler = async (_req, res) => {
+  try {
+    const data = await DonorServices.getDonorStats();
+    res.json({ success: true, data });
+  } catch (error) { handleError(error, res); }
+};
+
 const getDonorById: RequestHandler = async (req, res) => {
   try {
     const donor = await DonorServices.getDonorById(req.params.id as string);
@@ -56,6 +63,7 @@ const deleteDonor: RequestHandler = async (req, res) => {
 export const DonorControllers = {
   createDonor,
   getAllDonors,
+  getDonorStats,
   getDonorById,
   updateDonor,
   deleteDonor,

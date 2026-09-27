@@ -7,6 +7,7 @@ const donorRouter = Router();
 
 donorRouter.post('/', DonorControllers.createDonor);
 donorRouter.get('/', DonorControllers.getAllDonors);
+donorRouter.get('/stats', DonorControllers.getDonorStats);
 
 donorRouter.get('/:id', authMiddleware, authorizeRoles('admin'), DonorControllers.getDonorById);
 donorRouter.patch('/:id', authMiddleware, authorizeRoles('admin'), DonorControllers.updateDonor);

@@ -52,6 +52,9 @@ const normalizeDonorInput = (input: unknown, partial = false) => {
       ) {
         throw new DonorInputError('dob must be a valid past date.');
       }
+      if (ageFromDob(dob) < 18) {
+        throw new DonorInputError('Donor must be at least 18 years old.');
+      }
       result.dob = dob;
     } else if (field === 'mobileNo') {
       const mobile = trimmed.replace(/^\+?88/, '');

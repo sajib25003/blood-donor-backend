@@ -9,7 +9,7 @@ const app: Application = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://blood-donors-backend.vercel.app',
+  'https://blood-donors-of-bcic.vercel.app',
   // 'https://your-frontend.vercel.app',
 ];
 
